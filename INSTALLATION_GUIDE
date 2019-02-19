@@ -1,0 +1,22 @@
+1. Download pylib from this link: 
+https://github.com/dengdan/pylib/archive/e749559c9a4bcee3339081ec2d159a6dcf41636e.zip
+
+2. Place the directory in <pixelnet_root_dir>/pylib
+
+3. Add this path to $PYTHONPATH by running the command: 
+export PYTHONPATH=<pixelnet_root_dir>/pylib/src:$PYTHONPATH
+
+4. Download pre-trained model from:
+https://drive.google.com/file/d/19mlX5W8OBalSjhf5oTTS6qEq2eAU8Tg9/view
+
+5. Place test images in a directory, say <test_dir>
+
+6. Run the following command to run inference on the images: 
+cd <pixelnet_root_dir>./scripts/test_any.sh <GPU_ID> <model_path>/model.ckpt-xxx <test_dir>
+FOR EXAMPLE: ./scripts/test_any.sh 0 ./conv3_3/model.ckpt-38055 /data/test/
+
+7. Results will be stored in ~/temp/no-use/images.
+
+8. To tweak network params, like confidence threshold and image size, modify variables in <pixelnet_root_dir>/scripts/test_any.sh.
+
+9. For more information, read the pixelnet README file.
